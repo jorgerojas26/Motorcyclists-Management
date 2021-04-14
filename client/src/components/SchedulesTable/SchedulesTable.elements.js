@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import styled from 'styled-components';
 
 export const StyledTable = styled.table`
@@ -6,23 +7,10 @@ export const StyledTable = styled.table`
     text-align: center;
 `;
 
-export const THead = styled.thead`
-    background-color: #aaa;
-    border: 1px outset black;
-`;
-
-export const TFoot = styled.tfoot`
-    // custom css goes here
-`;
-
-export const TBody = styled.tbody``;
-
-export const TR = styled.tr`
-    background-color: #eee;
-    border: 1px inset grey;
-    background-color: ${(props) => (props.scheduled ? '#3CB371' : props.freeSlots ? 'white' : props.freeSlots == null ? 'grey' : 'red')};
-    color: ${(props) => (props.scheduled || !props.freeSlots ? 'white' : 'black')};
-    cursor: 'pointer';
+export const TD = styled.td`
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    padding: 5px;
 `;
 
 export const TH = styled.th`
@@ -36,8 +24,23 @@ export const THChildrenWrapper = styled.div`
     justify-content: center;
 `;
 
-export const TD = styled.td`
-    border-left: 1px solid grey;
-    border-right: 1px solid grey;
-    padding: 5px;
+export const TR = styled.tr`
+    background-color: #eee;
+    border: 1px inset grey;
+
+    ${TD} {
+        background-color: ${(props) => (props.scheduled ? '#3CB371' : props.freeSlots ? 'white' : props.freeSlots == null ? 'grey' : 'red')};
+        color: ${(props) => (props.scheduled || !props.freeSlots ? 'white' : 'black')};
+    }
 `;
+
+export const THead = styled.thead`
+    background-color: #eee;
+    border: 1px outset black;
+`;
+
+export const TFoot = styled.tfoot`
+    // custom css goes here
+`;
+
+export const TBody = styled.tbody``;

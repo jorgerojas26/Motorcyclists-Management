@@ -35,8 +35,8 @@ const SchedulesTable = () => {
                     scheduleList.map((schedule) => {
                         return (
                             <Table.TR
-                                scheduled={schedule.scheduled}
                                 key={schedule.hour}
+                                scheduled={schedule.scheduled}
                                 freeSlots={schedule.freeSlots}
                                 onClick={() => onClickHandler(schedule)}
                             >
