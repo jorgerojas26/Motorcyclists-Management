@@ -7,7 +7,7 @@ import { Table } from '../SchedulesTable';
 
 import { onClickHandler } from './SchedulesTableContainer';
 
-import { useRequestScheduleInfo } from '../../socketIo/socketIo-utils';
+import { useRequestScheduleInfo } from './hooks/getScheduleInfo';
 
 const SchedulesTable = () => {
     let scheduleList = useRequestScheduleInfo([]);

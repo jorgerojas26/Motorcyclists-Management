@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import socket from './socketIO';
+import socket from '../../../socketIo/socketIO';
 
 export const useRequestScheduleInfo = (initialState) => {
     let [scheduleList, setScheduleList] = useState(initialState);
